@@ -1,5 +1,5 @@
 """
-Smoking Detection System — Real-Time Edition (Smooth & Strict)
+SmokeGuard — Real-Time Edition (Smooth & Strict)
 Inference runs locally in a background thread for zero network latency.
 Includes a temporal frame buffer for accuracy and a cooldown timer for smooth UI.
 
@@ -213,7 +213,7 @@ def draw_ui(frame, faces, cigarettes, is_smoking_alert, fps):
     cv2.putText(frame, fps_text, (img_w - fw - 10, 35),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.55, C_DIM, 1, cv2.LINE_AA)
 
-    cv2.putText(frame, "smoking-detection v5 (Smooth)", (img_w - 230, img_h - 10),
+    cv2.putText(frame, "SmokeGuard v5 (Smooth)", (img_w - 185, img_h - 10),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.42, C_DIM, 1, cv2.LINE_AA)
 
     return frame
@@ -234,7 +234,7 @@ def run_on_image(path):
     smoking = check_smoking(faces, cigs, img_w, img_h)
     
     frame = draw_ui(frame, faces, cigs, smoking, fps=0)
-    cv2.imshow("Smoking Detection", frame)
+    cv2.imshow("SmokeGuard", frame)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -286,7 +286,7 @@ def run_on_video(source):
             frame_count = 0
 
         frame = draw_ui(frame, faces, cigs, is_smoking_alert, fps)
-        cv2.imshow("Smoking Detection", frame)
+        cv2.imshow("SmokeGuard", frame)
 
         spent_ms = int((time.time() - loop_start) * 1000)
         wait_ms  = max(1, TARGET_MS - spent_ms)

@@ -1,4 +1,4 @@
-# Smoking Detection
+# SmokeGuard
 
 Real-time smoking detection using the [Roboflow](https://roboflow.com) inference API. Detects faces and cigarettes in a webcam feed or video file, and triggers an alert when a cigarette is detected near a face.
 
@@ -13,8 +13,8 @@ Real-time smoking detection using the [Roboflow](https://roboflow.com) inference
 
 1. Clone the repo and create a virtual environment:
    ```bash
-   git clone https://github.com/introshia/smoking-detection.git
-   cd smoking-detection
+   git clone https://github.com/introshia/smokeguard.git
+   cd smokeguard
    python -m venv venv
    source venv/bin/activate  # Windows: venv\Scripts\activate
    ```
